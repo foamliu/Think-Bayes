@@ -5,7 +5,7 @@ Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
-from thinkbayes import Suite
+from chapter1.thinkbayes import Suite
 
 
 class M_and_M(Suite):
