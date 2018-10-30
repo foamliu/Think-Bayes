@@ -272,7 +272,7 @@ class _DictWrapper(object):
 
     def Print(self):
         """Prints the values and freqs/probs in ascending order."""
-        for val, prob in sorted(self.d.iteritems()):
+        for val, prob in sorted(self.d.items()):
             print(val, prob)
 
     def Set(self, x, y=0):
@@ -385,11 +385,11 @@ class Pmf(_DictWrapper):
         return MakeCdfFromPmf(self, name=name)
 
     def ProbGreater(self, x):
-        t = [prob for (val, prob) in self.d.iteritems() if val > x]
+        t = [prob for (val, prob) in self.d.items() if val > x]
         return sum(t)
 
     def ProbLess(self, x):
-        t = [prob for (val, prob) in self.d.iteritems() if val < x]
+        t = [prob for (val, prob) in self.d.items() if val < x]
         return sum(t)
 
     def Normalize(self, fraction=1.0):
@@ -426,7 +426,7 @@ class Pmf(_DictWrapper):
 
         target = random.random()
         total = 0.0
-        for x, p in self.d.iteritems():
+        for x, p in self.d.items():
             total += p
             if total >= target:
                 return x
@@ -1400,7 +1400,7 @@ def SampleSum(dists, n):
 
     returns: new Pmf of sums
     """
-    pmf = MakePmfFromList(RandomSum(dists) for i in xrange(n))
+    pmf = MakePmfFromList(RandomSum(dists) for i in range(n))
     return pmf
 
 

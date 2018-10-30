@@ -5,8 +5,8 @@ Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
-from chapter2 import thinkplot
-from chapter1.dice import Dice
+import thinkplot
+from chapter2.dice import Dice
 
 
 class Train(Dice):

@@ -1,4 +1,4 @@
-from chapter1.thinkbayes import Pmf
+from thinkbayes import Pmf
 
 pmf = Pmf()
 for x in [1, 2, 3, 4, 5, 6]:
