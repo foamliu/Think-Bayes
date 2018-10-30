@@ -57,6 +57,14 @@ def main():
     for hypo, prob in pmf.Items():
         print(hypo, prob)
 
+    # we draw more than one cookie from the same bowl
+    # (with replacement)
+    dataset = ['vanilla', 'chocolate', 'vanilla']
+    for data in dataset:
+        pmf.Update(data)
+    for hypo, prob in pmf.Items():
+        print(hypo, prob)
+
 
 if __name__ == '__main__':
     main()
