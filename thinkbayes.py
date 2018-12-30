@@ -1469,7 +1469,7 @@ def MakePoissonPmf(lam, high, step=1):
     returns: normalized Pmf
     """
     pmf = Pmf()
-    for k in xrange(0, high + 1, step):
+    for k in range(0, high + 1, step):
         p = EvalPoissonPmf(k, lam)
         pmf.Set(k, p)
     pmf.Normalize()
