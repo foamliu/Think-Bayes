@@ -469,8 +469,7 @@ class GapDirichlet(thinkbayes.Dirichlet):
         """
         k, y = data
 
-        print
-        k, y
+        print(k, y)
         prior = self.PredictivePmf(self.xs)
         gaps = Gaps(prior)
         gaps.Update(y)
@@ -509,8 +508,7 @@ class GapDirichlet2(GapDirichlet):
 
         mean_zb = obs_zb.Mean()
         self.mean_zbs.append(mean_zb)
-        print
-        k, y, mean_zb
+        print(k, y, mean_zb)
 
         # use observed z to update beliefs about pmf_z
         self.params += numpy.array(probs)
@@ -688,8 +686,7 @@ def RunSimpleProcess(gap_times, lam=0.0333, num_passengers=15, plot=True):
     UPPER_BOUND = 1200
 
     cdf_z = thinkbayes.MakeCdfFromList(gap_times).Scale(1.0 / 60)
-    print
-    'CI z', cdf_z.CredibleInterval(90)
+    print('CI z', cdf_z.CredibleInterval(90))
 
     xs = MakeRange(low=10)
 
@@ -731,14 +728,11 @@ def RunMixProcess(gap_times, lam=0.0333, num_passengers=15, plot=True):
     total_y = 0
     total_k2 = 0
     for k1, y, k2 in passenger_data:
-        print
-        k1, y / 60, k2
+        print(k1, y / 60, k2)
         total_y += y / 60
         total_k2 += k2
-    print
-    total_k2, total_y
-    print
-    'Average arrival rate', total_k2 / total_y
+    print(total_k2, total_y)
+    print('Average arrival rate', total_k2 / total_y)
 
     are = ArrivalRateEstimator(passenger_data)
 
