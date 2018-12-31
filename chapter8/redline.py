@@ -346,8 +346,7 @@ class ArrivalRateEstimator(object):
         for _k1, y, k2 in passenger_data:
             self.post_lam.Update((y, k2))
 
-        print
-        'Mean posterior lambda', self.post_lam.Mean()
+        print('Mean posterior lambda', self.post_lam.Mean())
 
     def MakePlot(self, root='redline1'):
         """Plot the prior and posterior CDF of passengers arrival rate.
@@ -543,12 +542,9 @@ class GapTimeEstimator(object):
 
     def PlotPmfs(self):
         """Plot the PMFs."""
-        print
-        'Mean y', self.pmf_y.Mean()
-        print
-        'Mean z', self.post_z.Mean()
-        print
-        'Mean zb', self.post_zb.Mean()
+        print('Mean y', self.pmf_y.Mean())
+        print('Mean z', self.post_z.Mean())
+        print('Mean zb', self.post_zb.Mean())
 
         thinkplot.Pmf(self.pmf_y)
         thinkplot.Pmf(self.post_z)
