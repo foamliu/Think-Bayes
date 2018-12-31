@@ -334,7 +334,7 @@ def Contour(obj, pcolor=False, contour=True, imshow=False, **options):
 
     Underride(options, linewidth=3, cmap=matplotlib.cm.Blues)
 
-    xs, ys = zip(*d.iterkeys())
+    xs, ys = zip(*d.keys())
     xs = sorted(set(xs))
     ys = sorted(set(ys))
 
