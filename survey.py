@@ -5,25 +5,29 @@ Copyright 2010 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
-import sys
 import gzip
 import os
+import sys
+
 
 class Record(object):
     """Represents a record."""
 
-class Respondent(Record): 
+
+class Respondent(Record):
     """Represents a respondent."""
+
 
 class Pregnancy(Record):
     """Represents a pregnancy."""
+
 
 class Table(object):
     """Represents a table as a list of objects"""
 
     def __init__(self):
         self.records = []
-        
+
     def __len__(self):
         return len(self.records)
 
@@ -70,11 +74,11 @@ class Table(object):
         obj = constructor()
         for (field, start, end, cast) in fields:
             try:
-                s = line[start-1:end]
+                s = line[start - 1:end]
                 val = cast(s)
             except ValueError:
-                #print line
-                #print field, start, end, s
+                # print line
+                # print field, start, end, s
                 val = 'NA'
             setattr(obj, field, val)
         return obj
@@ -122,7 +126,8 @@ class Respondents(Table):
         """
         return [
             ('caseid', 1, 12, int),
-            ]
+        ]
+
 
 class Pregnancies(Table):
     """Contains survey data about a Pregnancy."""
@@ -155,7 +160,7 @@ class Pregnancies(Table):
             ('birthord', 278, 279, int),
             ('agepreg', 284, 287, int),
             ('finalwgt', 423, 440, float),
-            ]
+        ]
 
     def Recode(self):
         for rec in self.records:
@@ -173,7 +178,7 @@ class Pregnancies(Table):
             # filtering
             try:
                 if (rec.birthwgt_lb != 'NA' and rec.birthwgt_lb < 20 and
-                    rec.birthwgt_oz != 'NA' and rec.birthwgt_oz <= 16):
+                        rec.birthwgt_oz != 'NA' and rec.birthwgt_oz <= 16):
                     rec.totalwgt_oz = rec.birthwgt_lb * 16 + rec.birthwgt_oz
                 else:
                     rec.totalwgt_oz = 'NA'
@@ -184,12 +189,12 @@ class Pregnancies(Table):
 def main(name, data_dir='.'):
     resp = Respondents()
     resp.ReadRecords(data_dir)
-    print 'Number of respondents', len(resp.records)
+    print('Number of respondents', len(resp.records))
 
     preg = Pregnancies()
     preg.ReadRecords(data_dir)
-    print 'Number of pregnancies', len(preg.records)
+    print('Number of pregnancies', len(preg.records))
 
-    
+
 if __name__ == '__main__':
     main(*sys.argv)
