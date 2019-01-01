@@ -264,8 +264,7 @@ def main():
     # split the next two, win the third
     p_series += 2 * p_win * (1 - p_win) * p_win
 
-    print
-    'p_series', p_series
+    print('p_series', p_series)
 
 
 if __name__ == '__main__':
