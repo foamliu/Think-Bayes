@@ -9,7 +9,6 @@ import math
 import sys
 
 import survey
-
 import thinkstats
 
 
