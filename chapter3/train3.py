@@ -7,7 +7,7 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
 import thinkbayes
 import thinkplot
-from dice import Dice
+from chapter2.dice import Dice
 from thinkbayes import Pmf, Percentile
 
 

@@ -5,7 +5,7 @@ Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
-from dice import Dice
+from chapter2.dice import Dice
 
 import thinkplot
 
