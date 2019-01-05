@@ -5,9 +5,10 @@ Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 """
 
+import thinkplot
 from chapter2.dice import Dice
 
-import thinkplot
+FORMATS = ['png']
 
 
 class Train(Dice):
@@ -43,7 +44,8 @@ def main():
 
     thinkplot.Save(root='train2',
                    xlabel='Number of trains',
-                   ylabel='Probability')
+                   ylabel='Probability',
+                   formats=FORMATS)
 
 
 if __name__ == '__main__':

@@ -8,6 +8,8 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 import thinkplot
 from chapter2.dice import Dice
 
+FORMATS = ['png']
+
 
 class Train(Dice):
     """Represents hypotheses about how many trains the company has.
@@ -29,7 +31,7 @@ def main():
     thinkplot.Save(root='train1',
                    xlabel='Number of trains',
                    ylabel='Probability',
-                   formats=['pdf', 'eps'])
+                   formats=FORMATS)
 
 
 if __name__ == '__main__':

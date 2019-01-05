@@ -17,7 +17,8 @@ import thinkbayes
 import thinkplot
 
 INTERVAL = 245 / 365.0
-FORMATS = ['pdf', 'eps']
+# FORMATS = ['pdf', 'eps']
+FORMATS = ['png']
 MINSIZE = 0.2
 MAXSIZE = 20
 BUCKET_FACTOR = 10

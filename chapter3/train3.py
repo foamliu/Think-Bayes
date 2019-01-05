@@ -10,6 +10,8 @@ import thinkplot
 from chapter2.dice import Dice
 from thinkbayes import Pmf, Percentile
 
+FORMATS = ['png']
+
 
 class Train(Dice):
     """Represents hypotheses about how many trains the company has."""
@@ -67,7 +69,8 @@ def ComparePriors():
 
     thinkplot.Save(root='train4',
                    xlabel='Number of trains',
-                   ylabel='Probability')
+                   ylabel='Probability',
+                   formats=FORMATS)
 
 
 def main():
@@ -84,7 +87,8 @@ def main():
 
     thinkplot.Save(root='train3',
                    xlabel='Number of trains',
-                   ylabel='Probability')
+                   ylabel='Probability',
+                   formats=FORMATS)
 
     interval = Percentile(suite, 5), Percentile(suite, 95)
     print(interval)
