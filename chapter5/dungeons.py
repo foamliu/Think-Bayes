@@ -10,7 +10,8 @@ import random
 import thinkbayes
 import thinkplot
 
-FORMATS = ['pdf', 'eps', 'png']
+# FORMATS = ['pdf', 'eps', 'png']
+FORMATS = ['png']
 
 
 class Die(thinkbayes.Pmf):

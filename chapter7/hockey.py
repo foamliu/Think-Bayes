@@ -188,7 +188,8 @@ def main():
     # ReadHockeyData()
     # return
 
-    formats = ['pdf', 'eps', 'png']
+    # formats = ['pdf', 'eps', 'png']
+    formats = ['png']
 
     suite1 = Hockey('bruins')
     suite2 = Hockey('canucks')

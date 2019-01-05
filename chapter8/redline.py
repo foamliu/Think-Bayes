@@ -14,7 +14,8 @@ import numpy
 import thinkbayes
 import thinkplot
 
-FORMATS = ['pdf', 'eps', 'png', 'jpg']
+# FORMATS = ['pdf', 'eps', 'png', 'jpg']
+FORMATS = ['png']
 
 """
 Notation guide:
