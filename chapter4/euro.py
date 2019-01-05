@@ -25,6 +25,8 @@ rather than fair?"
 import thinkbayes
 import thinkplot
 
+FORMATS = ['png']
+
 
 class Euro(thinkbayes.Suite):
     """Represents hypotheses about the probability of heads."""
@@ -115,7 +117,7 @@ def PlotSuites(suites, root):
     thinkplot.Save(root=root,
                    xlabel='x',
                    ylabel='Probability',
-                   formats=['pdf', 'eps'])
+                   formats=FORMATS)
 
 
 def main():
