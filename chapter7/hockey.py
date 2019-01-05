@@ -8,10 +8,9 @@ License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 import math
 
 import columns
-import thinkstats
-
 import thinkbayes
 import thinkplot
+import thinkstats
 
 USE_SUMMARY_DATA = True
 
@@ -189,7 +188,7 @@ def main():
     # ReadHockeyData()
     # return
 
-    formats = ['pdf', 'eps']
+    formats = ['pdf', 'eps', 'png']
 
     suite1 = Hockey('bruins')
     suite2 = Hockey('canucks')

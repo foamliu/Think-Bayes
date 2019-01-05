@@ -13,7 +13,8 @@ import matplotlib.pyplot as pyplot
 import thinkbayes
 import thinkplot
 
-FORMATS = ['pdf', 'eps', 'png']
+# FORMATS = ['pdf', 'eps', 'png']
+FORMATS = ['png']
 
 
 def StrafingSpeed(alpha, beta, x):
