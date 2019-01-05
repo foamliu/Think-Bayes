@@ -30,7 +30,7 @@ def Cov(xs, ys, mux=None, muy=None):
 
     total = 0.0
     for x, y in zip(xs, ys):
-        total += (x-mux) * (y-muy)
+        total += (x - mux) * (y - muy)
 
     return total / len(xs)
 
@@ -116,7 +116,7 @@ def Residuals(xs, ys, inter, slope):
     Returns:
         list of residuals
     """
-    res = [y - inter - slope*x for x, y in zip(xs, ys)]
+    res = [y - inter - slope * x for x, y in zip(xs, ys)]
     return res
 
 
@@ -146,7 +146,7 @@ def MapToRanks(t):
     """
     # pair up each value with its index
     pairs = enumerate(t)
-    
+
     # sort by value
     sorted_pairs = sorted(pairs, key=lambda pair: pair[1])
 
@@ -157,7 +157,7 @@ def MapToRanks(t):
     resorted = sorted(ranked, key=lambda trip: trip[1][0])
 
     # extract the ranks
-    ranks = [trip[0]+1 for trip in resorted]
+    ranks = [trip[0] + 1 for trip in resorted]
     return ranks
 
 
@@ -171,7 +171,7 @@ def CorrelatedGenerator(rho):
     x = random.gauss(0, 1)
     yield x
 
-    sigma = math.sqrt(1 - rho**2);    
+    sigma = math.sqrt(1 - rho ** 2);
     while True:
         x = random.gauss(x * rho, sigma)
         yield x
@@ -192,7 +192,7 @@ def CorrelatedNormalGenerator(mu, sigma, rho):
 
 def main():
     pass
-    
+
 
 if __name__ == '__main__':
     main()
